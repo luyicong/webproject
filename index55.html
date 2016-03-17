@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{padding:0;margin:0;}
+	.tab{width:300px;height:300px;border:1px solid #999;margin:100px auto;}
+	.tab ul{width:100%;height:30px;list-style:none;border-bottom:1px solid #999;}
+	.tab ul li{width: 100px;height:100%;line-height:30px;text-align:center;float: left;cursor: pointer;}
+	.tab ul .active{background:red;}
+	.tab div{width:100%;height:270px;font-size:30px;line-height:270px;text-align:center;display:none;}
+	</style>
+	<script type="text/javascript">
+
+	window.onload = function (){//面向对象选项卡
+
+		var t1 = new Tab();//创建Tab选项卡对象
+
+		t1.init();//初始化
+	}
+
+	function Tab(){//对象函数
+
+		this.aLi = document.getElementsByTagName('li');
+
+	 	this.oDiv = document.getElementById('tab').getElementsByTagName('div');
+	}
+
+	Tab.prototype.init = function (){//给对象添加方法
+
+		var This = this;
+
+		for (var i = 0; i < this.aLi.length; i++) {
+
+			this.aLi[i].index = i;
+
+	 		this.aLi[i].onclick = function (){
+
+	 			This.tabChange(this);//方法调用
+	 		};
+	 	}
+	};
+
+	Tab.prototype.tabChange = function (obj){//给对象添加方法
+
+		for (var i = 0; i < this.aLi.length; i++) {
+
+			this.aLi[i].className = '';
+
+	 		this.oDiv[i].style.display = 'none';
+	 	}
+
+	 	obj.className = 'active';
+
+	 	this.oDiv[obj.index].style.display = 'block';
+	};
+	</script>
+</head>
+<body>
+	<div id="tab" class="tab">
+		<ul>
+			<li class="active">菜单一</li>
+			<li>菜单二</li>
+			<li>菜单三</li>
+		</ul>
+		<div style="display: block;">1111111</div>
+		<div>2222222</div>
+		<div>3333333</div>
+	</div>
+</body>
+</html>
