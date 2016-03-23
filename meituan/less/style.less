@@ -1,0 +1,116 @@
+html,body,div,h1,h2,h3,h4,h5,h6,span,p,section,input,ul,ol,li{padding:0;margin:0;}
+body{font:400 12px/1.5 "Hiragino Sans GB","WenQuanYi Micro Hei",tahoma,sans-serif;}
+ul,ol{list-style-type: none;}
+input{outline:none;}
+*:focus { outline: none; }
+a,a:link,a:visited{color: #666;text-decoration: none;}
+
+/*
+清除浮动
+ */
+.clear{zoom:1;}
+
+.clear:after{content:'';display: block;clear:both;overflow: hidden;}
+
+.fl{float: left;}
+.fr{float: right;}
+
+.w1170{width: 1170px;margin:0 auto;}
+
+.topbar{
+	width: 100%;
+	height: 29px;
+	border-bottom:1px solid #eee;
+	background: #f9f9f9;
+	 }
+.topCon{
+	height: 100%;
+	line-height: 29px;
+}
+
+.left-info{
+	float: left;
+	height: 100%;
+	 li{
+		height: 29px;
+		line-height: 29px;
+		float: left;
+		width:84px;
+		text-align: center;
+		
+	}
+	.loginTxt a{
+			padding:0 5px;
+			&:first-child{
+				color: #f76120;
+			}
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	.appDonload{
+		position: relative;
+
+		&:hover .downloadIcon{
+			display: block;
+		}
+		&:hover{
+			border-left:1px solid #eee;
+			border-right:1px solid #eee;
+			background: #fff;
+			height: 30px;
+			width:82px;
+		}
+		.downloadIcon{
+			width: 165px;
+			height: 264px;
+			border:1px solid #eee;
+			border-top:none;
+			position: absolute;
+			top:29px;
+			left:-1px;
+			display: none;
+			a{
+				width: 145px;
+				height: 112px;
+				display: block;
+				padding:10px;
+				border-bottom: 1px dotted #eee;
+			}
+		}
+		.title{
+			line-height: 18px;
+			height: 18px;
+			padding-left: 5px;
+			float: left;
+			border-left: 2px solid #2bb8aa;
+		}
+		.erIcon{
+			width:90px;
+			height: 90px;
+			display: block;
+			margin:24px auto;
+			background: url(../img/er.png) no-repeat;
+		}
+		.er1{
+			background-position: 0 0;
+		}
+		.er2{
+			background-position: 0 -90px;
+		}
+	}
+	.downloadTxt{
+		&:hover{
+			color: #2bb8aa;
+		}
+	}
+}
+.right-info{
+	float: right;
+	height: 100%;
+	li{
+		width:80px;
+		text-align: center;
+		float: left;
+	}
+}
