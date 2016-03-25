@@ -683,10 +683,14 @@ a:visited {
 .fsnew-left .newsPic ul {
   height: 100%;
   width: 600%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .fsnew-left .newsPic li {
   width: 714px;
   height: 100%;
+  float: left;
 }
 .fsnew-left .newsPic .news-item {
   width: 346px;
@@ -723,34 +727,6 @@ a:visited {
   padding-right: 20px;
   line-height: 70px;
 }
-.fsnew-left .newsPic .btn {
-  height: 50px;
-  line-height: 50px;
-  display: block;
-  background: rgba(0, 0, 0, 0.7);
-  position: absolute;
-  top: 50%;
-  margin-top: -25px;
-  color: #fff;
-  font-size: 15px;
-  display: none;
-}
-.fsnew-left .newsPic .prev {
-  width: 50px;
-  left: 16px;
-}
-.fsnew-left .newsPic .next {
-  width: 100px;
-  right: 2px;
-}
-.fsnew-left .newsPic .next span {
-  display: block;
-  width: 45px;
-  height: 50px;
-  line-height: 50px;
-  float: left;
-  text-align: center;
-}
 .fsnew-right {
   width: 198px;
   height: 494px;
@@ -772,8 +748,380 @@ a:visited {
 .fsnew-right .dayNews p {
   text-align: center;
 }
+.btn {
+  height: 40px;
+  line-height: 40px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  display: none;
+  background: url(../img/floor-news.png) no-repeat;
+  background-position: 0 5px;
+}
+.prev {
+  width: 30px;
+  left: 16px;
+  background-position: 0 5px;
+}
+.next {
+  width: 60px;
+  right: 0;
+  background-position: 0 -41px;
+}
+.next span {
+  display: block;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  text-align: center;
+  color: #fff;
+}
 .content {
   width: 1170px;
-  height: 1000px;
   margin: 0 auto;
+  overflow: hidden;
+}
+.content .more {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  display: block;
+  background: #f6f6f6;
+  font-size: 16px;
+}
+.content .more:hover {
+  color: #2bb8aa;
+}
+.content .cateTitle {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+}
+.content .cateTitle a {
+  width: 130px;
+  height: 60px;
+  display: block;
+  font-size: 20px;
+  float: left;
+}
+.content .cateTitle .title-icon {
+  width: 38px;
+  height: 40px;
+  display: block;
+  float: left;
+  margin: 10px 2px;
+}
+.content .cateTitle .icon1 {
+  background: url(../img/floor-news.png) no-repeat;
+  background-position: 0 -320px;
+}
+.content .cateTitle .icon2 {
+  width: 45px;
+  height: 32px;
+  margin-top: 16px;
+  background: url(../img/ms.png) no-repeat;
+}
+.content .cateTitle .Countdown {
+  width: 210px;
+  height: 26px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  float: left;
+  margin: 8px 2px;
+  padding: 8px;
+}
+.content .cateTitle .Countdown span {
+  display: block;
+}
+.content .cateTitle .Countdown .status {
+  width: 50px;
+  height: 28px;
+  background: url(../img/floor-news.png) no-repeat;
+  background-position: 0 -376px;
+  float: left;
+}
+.content .cateTitle .Countdown .timer {
+  width: 150px;
+  height: 28px;
+  float: left;
+  padding-left: 10px;
+  line-height: 28px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+}
+.content .cateTitle .Countdown .Time {
+  width: 46px;
+  height: 28px;
+  float: left;
+}
+.content .cateTitle .Countdown .spot {
+  width: 6px;
+  height: 16px;
+  background: url(../img/floor-news.png) no-repeat;
+  background-position: 0 -360px;
+  float: left;
+  margin: 6px 0;
+}
+.content .cateTitle .Countdown .time {
+  width: 23px;
+  height: 28px;
+  background: url(../img/floor-news.png) no-repeat;
+  background-position: 0 -82px;
+  overflow: hidden;
+  float: left;
+}
+.PanicBuying-shops {
+  width: 100%;
+  height: 334px;
+  margin-top: 18px;
+}
+.cateCon {
+  width: 1168px;
+  height: 262px;
+  position: relative;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.cateCon .carouseList {
+  width: 305%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  margin-left: -1px;
+}
+.cateCon ul {
+  width: 1170px;
+  overflow: hidden;
+  float: left;
+  border-left: 1px solid #eee;
+}
+.cateCon:hover .btn {
+  display: block;
+  z-index: 5;
+}
+.cateCon .prev {
+  left: 0;
+}
+.cateCon li {
+  width: 199px;
+  height: 226px;
+  border: 1px solid #eee;
+  margin-left: -1px;
+  padding: 17px;
+  float: left;
+}
+.cateCon li h3 {
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+.cateCon li .price {
+  color: #f76120;
+  font-size: 16px;
+}
+.cateCon li .price strong {
+  font-weight: normal;
+}
+.cateCon li .appPurchase {
+  height: 20px;
+  width: 100%;
+  border-top: 1px dotted #eee;
+  padding-top: 10px;
+}
+.cateCon li .appPurchase p {
+  background: #f76120;
+  color: #fff;
+  float: left;
+  padding: 2px 3px;
+}
+.cateCon li .price,
+.cateCon li .Soldnum {
+  line-height: 36px;
+}
+.hd-foodsCon {
+  width: 100%;
+  overflow: hidden;
+}
+.foodsConList {
+  width: 100%;
+  overflow: hidden;
+  border-left: 1px solid #eee;
+  border-top: 1px solid #eee;
+}
+.foodsConList li {
+  width: 261px;
+  height: 277px;
+  border: 1px solid #eee;
+  padding: 15px;
+  float: left;
+  margin: -1px 0 0 -1px;
+}
+.foodsConList li .price {
+  color: #f76120;
+  font-size: 16px;
+}
+.foodsConList li .oldPrice {
+  color: #999;
+  font-size: 12px;
+  text-decoration: line-through;
+  padding-left: 10px;
+}
+.foodsConList li .Soldnum {
+  color: #999;
+}
+.foodsConList li .comment {
+  width: 100%;
+  height: 50px;
+  border-top: 1px dotted #eee;
+  margin-top: 10px;
+}
+.foodsConList li .commentNum {
+  float: right;
+  line-height: 50px;
+}
+.foodsConList li .commentNum:hover {
+  color: #2bb8aa;
+}
+.foodsConList .short-title {
+  line-height: 30px;
+  color: #999;
+}
+.footer {
+  height: 475px;
+  width: 100%;
+  padding-top: 42px;
+}
+.footer .GroupCate {
+  height: 88px;
+  border-bottom: 1px solid #eee;
+}
+.footer .GroupCate ul {
+  width: 100%;
+  height: 26px;
+  line-height: 24px;
+}
+.footer .GroupCate ul li {
+  width: 90px;
+  height: 25px;
+  border: 1px solid #eee;
+  border-bottom: none;
+  float: left;
+  text-align: center;
+  margin-right: -1px;
+  cursor: pointer;
+}
+.footer .GroupCate ul .active {
+  background: #eee;
+}
+.footer .GroupCate .CateCon {
+  width: 100%;
+  overflow: hidden;
+}
+.footer .GroupCate .CateCon div {
+  border: 1px solid #eee;
+  padding: 10px 0;
+  display: none;
+  overflow: hidden;
+}
+.footer .GroupCate .CateCon a {
+  padding: 0 20px;
+  float: left;
+  margin: 0 5px;
+  line-height: 26px;
+}
+.helpList {
+  height: 182px;
+  border-top: 1px solid #eee;
+  margin-top: 2px;
+  padding: 18px 0;
+}
+.helpLeft {
+  width: 868px;
+  height: 164px;
+  padding: 0 15px;
+  border-right: 1px solid #eee;
+}
+.helpLeft dl {
+  width: 216px;
+  height: 160px;
+  float: left;
+}
+.helpLeft dl dt {
+  font-size: 14px;
+  height: 30px;
+  color: #666;
+}
+.helpLeft dl dd {
+  width: 100%;
+  overflow: hidden;
+}
+.helpLeft dl dd a {
+  width: 100%;
+  line-height: 22px;
+  float: left;
+  display: block;
+}
+.contactR {
+  width: 190px;
+  height: 162px;
+  padding-left: 34px;
+  float: left;
+}
+.contactR p {
+  line-height: 20px;
+}
+.contactR .Cnumber {
+  margin-bottom: 30px;
+}
+.contactR .Cnumber i {
+  color: #999;
+}
+.contactR a {
+  color: #2bb8aa;
+}
+.copyRight {
+  border-top: 1px solid #eee;
+}
+.copyRight p {
+  line-height: 50px;
+  padding: 10px 0;
+  text-align: center;
+}
+.copyRight ul {
+  width: 565px;
+  height: 38px;
+  margin: 0 auto;
+}
+.copyRight ul li {
+  width: 111px;
+  height: 38px;
+  float: left;
+  margin-right: 2px;
+}
+.copyRight ul li a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: url(../img/footerIcon.png) no-repeat;
+}
+.copyRight ul li .record {
+  background-position: 0 0;
+}
+.copyRight ul li .alipay {
+  background-position: 0 -40px;
+}
+.copyRight ul li .tenpay {
+  background-position: 0 -127px;
+}
+.copyRight ul li .knet {
+  background-position: 0 -167px;
+}
+.copyRight ul li .x12315 {
+  background-position: 0 -205px;
 }
