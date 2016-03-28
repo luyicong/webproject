@@ -170,4 +170,65 @@ $(function(){
 			});
 		}
 	})();
+
+	//楼层跳转
+	(function(){
+
+		var $elevator = $('.J_Elevator');
+
+		var $eleLi = $elevator.find('li');
+
+		var $groupP = $('.J_GroupP');
+
+		var index = 0;
+
+		var $elemoffsetTop = 0;
+
+		var iScrollTop = 0;
+
+		var iWindowH = 0;
+
+		var $initScrollTop = $('.content').offset().top;
+
+		$(window).scroll(function(){
+
+			scrollEvent();
+
+		});
+
+		$eleLi.on('click',function(){
+
+			 var iTop = $groupP.eq($(this).index()).offset().top;
+
+			$(this).addClass('active').siblings().removeClass('active');
+
+			$('html,body').stop().animate({scrollTop : iTop });
+		});
+
+		function scrollEvent(){
+
+			iScrollTop = $(window).scrollTop();
+
+			iWindowH = $(window).height();
+
+			if(iScrollTop > $initScrollTop){
+
+				$elevator.fadeIn();
+
+			}else if(iScrollTop < $initScrollTop){
+
+				$elevator.fadeOut();
+			}
+
+			$groupP.each(function(index,obj){
+
+				$elemoffsetTop = $groupP.eq(index).offset().top;
+
+				if( $elemoffsetTop > $initScrollTop && $elemoffsetTop < iWindowH/3 + iScrollTop){
+
+					$eleLi.eq(index).addClass('active').siblings().removeClass('active');
+				}
+			});
+		}
+	})();
 });

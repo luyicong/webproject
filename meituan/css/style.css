@@ -1125,3 +1125,38 @@ a:visited {
 .copyRight ul li .x12315 {
   background-position: 0 -205px;
 }
+.Elevator {
+  width: 44px;
+  height: 517px;
+  position: fixed;
+  top: 50%;
+  left: 7%;
+  margin-top: -258px;
+  display: none;
+}
+.Elevator li {
+  width: 42px;
+  height: 60px;
+  border: 1px solid #eee;
+  margin-top: -1px;
+  cursor: pointer;
+}
+.Elevator li a {
+  width: 26px;
+  height: 40px;
+  float: left;
+  display: block;
+  padding: 10px 8px;
+}
+.Elevator li:hover {
+  background-color: #2bb8aa;
+}
+.Elevator li:hover a {
+  color: #fff;
+}
+.Elevator .active {
+  background-color: #2bb8aa;
+}
+.Elevator .active a {
+  color: #fff;
+}

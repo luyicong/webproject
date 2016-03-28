@@ -1107,3 +1107,41 @@ a,a:link,a:visited{color: #666;text-decoration: none;}
 		}
 	}
 }
+.Elevator{
+	width: 44px;
+	height: 517px;
+	position: fixed;
+	top: 50%;
+	left: 7%;
+	margin-top: -258px;
+	display: none;
+	li{
+		width: 42px;
+		height: 60px;
+		border:1px solid #eee;
+		margin-top: -1px;
+		cursor: pointer;
+		a{
+			width: 26px;
+			height: 40px;
+			float: left;
+			display: block;
+			padding:10px 8px;
+		}
+		
+		&:hover{
+				background-color: #2bb8aa;
+				a{
+					color: #fff;
+				}
+			}
+	}
+
+	.active{
+			background-color: #2bb8aa;
+			a{
+
+				color: #fff;
+			}
+		}
+}
