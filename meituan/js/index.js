@@ -19,7 +19,6 @@ $(function(){
 		
 		TopHover($('.busCenter'),'busCenShowlist');
 
-
 		
 		function TopHover(linkClass,showClass){//封装公共函数
 
@@ -60,7 +59,7 @@ $(function(){
 		});
 	})();
 
-	(function(){
+	(function(){//轮播图
 
 		carosueMove($('.J_newsCon'),$('.J_newsCon ul'),$('.J_newsCon ul li'),$('.J_newsCon ul li').eq(0).width(),3);//banner轮播
 
@@ -229,6 +228,104 @@ $(function(){
 					$eleLi.eq(index).addClass('active').siblings().removeClass('active');
 				}
 			});
+		}
+	})();
+
+	(function(){//回到顶部
+
+		var $backTop = $('.J_backTop');
+
+		$(window).on('scroll',function(){
+
+			var iScrollTop = $(window).scrollTop();
+
+			if(iScrollTop > 500){
+
+				$backTop.fadeIn();
+			}else{
+				$backTop.fadeOut();
+			}
+		});
+
+		$backTop.on('click',function(){
+
+			$('html,body').animate({
+
+				scrollTop : 0
+			});
+		});
+
+	})();
+
+	(function(){//倒计时
+
+		var $Hour = $('.J_timeH').find('span');
+
+		var $Min = $('.J_timeM').find('span');
+
+		var $Sec = $('.J_timeS').find('span');
+
+		var timer = null;
+
+		function setDigit(num,n){
+
+			var str=""+num;
+
+			while(str.length<n){
+
+				str="0"+str;
+			}
+			return str;
+		};
+
+		timer=setInterval(updatetime,1000);
+
+		updatetime();
+
+		function updatetime(){
+
+			var oDateNow = new Date();
+
+			var endTime = $('.J_Countdown').attr('data-time');
+
+			var iRemain= endTime - oDateNow.getTime()/1000;//计算剩余全部的秒数
+
+			if (iRemain<=0) {
+
+				clearInterval(timer);
+
+				iRemain=0;
+
+				alert('已过时间');
+			};
+
+			var iDay=parseInt(iRemain/86400);//计算剩余天数
+
+			iRemain%=86400;
+
+			var iHour=parseInt(iRemain/3600);//计算剩余小时数
+
+			iRemain%=3600;
+			
+			var iMin=parseInt(iRemain/60);//计算剩余分钟数
+
+			iRemain%=60;
+
+			var iSec=parseInt(iRemain);//计算剩余秒数
+
+			function setTime(obj,time){
+
+				obj.each(function(i){
+
+					obj.eq(i).html(setDigit(time,2)[i]);
+				});
+			}
+
+			setTime($Hour,iHour);
+
+			setTime($Min,iMin);
+
+			setTime($Sec,iSec);
 		}
 	})();
 });
