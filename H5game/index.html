@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		*{padding:0;margin:0;}
+		#wrapGame{ width:800px; height:600px; overflow:hidden; background:black; margin:-300px -400px; position:absolute;left:50%;top:50%;}
+		#gameBtn{ color:white; font-size:20px; cursor:pointer; border:1px #FFFFFF solid; width:100px; height:30px; line-height:30px; text-align:center; position:absolute; top:285px; left:350px;text-decoration:none;}
+
+		#score{ color:#FFFFFF;}
+		#bee{ position:relative;}
+		.e1{ width:40px; height:28px; background:url(images/mf1.png) no-repeat; float:left;}
+		.e2{ width:40px; height:28px; background:url(images/mf2.png) no-repeat; float:left;}
+		.e3{ width:40px; height:28px; background:url(images/mf3.png) no-repeat; float:left;}
+
+		.air1{ width:46px; height:60px; background:url(images/fj.png) no-repeat; position:absolute;}
+		.bullet{ width:1px; overflow:hidden; height:10px; background:white; position:absolute;}
+	</style>
+	<script type="text/javascript" src="js/game.js"></script>
+</head>
+<body>
+	<div id="wrapGame">
+		<a id="gameBtn" href="javascript:;" title="">开始游戏</a>
+	</div>
+</body>
+</html>

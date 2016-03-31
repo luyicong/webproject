@@ -38,6 +38,8 @@ $(function(){
 
 		var aLi = $('.searchNav li');
 
+		// var  oSearch = $('.J_keyword');
+
 		aLi.parent().hover(function(){
 
 			$(this).addClass('active');
@@ -57,6 +59,12 @@ $(function(){
 
 			$(this).parent().removeClass('active');
 		});
+
+		// oSearch.on('focus',function(){
+
+		// 	alert(123);
+		// });
+
 	})();
 
 	(function(){//轮播图
