@@ -6,23 +6,61 @@
 	<style type="text/css" media="screen">
 		*{padding:0;margin:0;}
 		li{list-style: none;}
-		#wrapGame{ width:800px; height:600px; overflow:hidden; background:black; margin:-300px -400px; position:absolute;left:50%;top:50%;}
-		#gameBtn{ color:white; font-size:20px; cursor:pointer; border:1px #FFFFFF solid; width:100px; height:30px; line-height:30px; text-align:center; position:absolute; top:285px; left:350px;text-decoration:none;}
+		.wrap{width:1100px;height:600px;position:relative;margin:30px auto;}
+		.gameInfo{width:300px;height: 100%;position:absolute;left:0;top:0;background:#999;}
+		.gameInfo h4{line-height:40px;text-align:center;background-color:#c8c7c7;margin-bottom:10px;}
+		#wrapGame{ width:800px; height:600px; overflow:hidden; background:black; position:absolute;left:300px;top:0;}
+		.gameInfo div{line-height:30px;font-size:13px;background-color:#c8c7c7;padding:0 5px;overflow:hidden;}
+		.gameInfo div span{float: left;}
+		.gameInfo div em{font-style:normal;color:red;}
+		.gameInfo div span i{float: left;font-style:normal;}
+		.gameInfo div img{float: left;}
+		#gameBtn{ color:white; font-size:20px; cursor:pointer; border:1px #FFFFFF solid; width:100px; height:30px; line-height:30px; text-align:center; position:absolute; top:305px; left:350px;text-decoration:none;}
 
 		#score{ color:#FFFFFF;}
 		#bee{ position:relative;}
-		.e1{ width:40px; height:28px; background:url(images/mf1.png) no-repeat; float:left;}
-		.e2{ width:40px; height:28px; background:url(images/mf2.png) no-repeat; float:left;}
-		.e3{ width:40px; height:28px; background:url(images/mf3.png) no-repeat; float:left;}
+		.enemy1{ width:33px; height:30px; background:url(images/mf1.png) no-repeat; float:left;}
+		.enemy2{ width:33px; height:30px; background:url(images/mf2.png) no-repeat; float:left;}
+		.enemy3{ width:33px; height:30px; background:url(images/mf3.png) no-repeat; float:left;}
 
-		.air1{ width:46px; height:60px; background:url(images/fj.png) no-repeat; position:absolute;bottom: 0;}
+		.air1{ width:46px; height:60px; background:url(images/fj.png) no-repeat; position:absolute;}
 		.bullet{ width:1px; overflow:hidden; height:10px; background:white; position:absolute;}
+		.layer{width:200px;height: 150px;position:absolute;top:50%;left:50%;margin:-75px -100px;background-color:rgba(255,255,255,0.5);text-align:center;display:none;}
+		.layer span{line-height:100px;display:block;width:100%;}
+		.reloadBtn{width:80px;height:30px;color:#fff;text-decoration:none;display:block;border:1px solid #000;line-height:30px;text-align:center;margin:0 auto;}
+		.reloadBtn:hover{background-color:red;border:1px solid red;}
+		#Gk{color:#fff;line-height:30px;}
 	</style>
 	<script type="text/javascript" src="js/game.js"></script>
 </head>
 <body>
-	<div id="wrapGame">
-		<a id="gameBtn" href="javascript:;" title="">开始游戏</a>
+<div class="wrap">
+<div class="gameInfo">
+	<h4>简易版仿网页小蜜蜂游戏</h4>
+	<div>
+		<span>本游戏一共两个关卡。</span><br/>
+		<span><i>第一关：有两种小蜜蜂，分别是：</i><img src="images/mf1.png" height="30" width="33" alt=""><img src="images/mf2.png" height="30" width="33" alt=""></span>
+		<span><img src="images/mf1.png" height="30" width="33" alt="">子弹击中一次就死亡。</span><span><img src="images/mf2.png" height="30" width="33" alt="">子弹击中两次才死亡。</span><br/>
+		<span><i>第二关：增加一种强大的蜜蜂，就是</i><img src="images/mf3.png" height="30" width="33" alt=""></span>
+		<span>需要击中三次才死亡。</span>
 	</div>
+	<div>
+		<h4>游戏操作说明</h4>
+		<span>点击<em>“开始游戏按钮”</em>或<em>按键盘上的“Enter”键</em>或<em>按键盘上的“J”键</em>，进行游戏的开始。键盘上的<em>“上下左右”键</em>控制飞机的上下左右移动。键盘上的<em>空格键控制飞机发射子弹</em>。游戏通过一关后，提示进入第二关。</span>
+	</div>
+	<div>
+		<h4>作者及相关说明</h4>
+		<span>本简易版仿网页小蜜蜂游戏开发者为本人，游戏使用原生JavaScript编写，游戏采用的是单体开发模式开发（非面向对象）。更多关注的我的个人博客：<a href="www.congitlive.cn">www.congitlive.cn</a></span>
+	</div>
+</div>
+	<div id="wrapGame">
+		<div id="Gk"></div>
+		<a id="gameBtn" href="javascript:;" title="">开始游戏</a>
+		<!-- <div id="layer" class="layer">
+		<span>你输了，游戏结束!</span>
+		<a class="reloadBtn" href="javascript:;" title="">重玩一次</a>
+		</div> -->
+	</div>
+</div>
 </body>
 </html>
