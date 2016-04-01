@@ -18,6 +18,8 @@ window.onload = function (){
 				this.createScore();
 
 				this.createEnemy(0);
+
+				this.createAir();
 			},
 
 			Enemy : {//小蜜蜂数据
@@ -124,7 +126,13 @@ window.onload = function (){
 
 			createAir : function (){
 
+				var oAir = document.createElement('div');
 
+				oAir.className = 'air1';
+
+				this.oParent.appendChild(oAir);
+
+				oAir.style.left = (this.oParent.offsetWidth - oAir.offsetWidth)/2 + 'px'
 			}
 		}
 	}
