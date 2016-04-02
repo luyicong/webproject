@@ -1,5 +1,8 @@
 window.onload = function (){
 
+
+		var oWrapGame = document.getElementById('wrapGame');
+
 		var oBtn =document.getElementById('gameBtn');
 
 		var oGkTxt = document.getElementById('Gk');
@@ -12,6 +15,8 @@ window.onload = function (){
 
 				oBtn.style.display = 'none';
 
+				oWrapGame.style.backgroundImage = 'url(../images/bg.png)';
+
 				Game.init('wrapGame');//执行初始化
 ;
 			}
@@ -20,6 +25,8 @@ window.onload = function (){
 		oBtn.onclick = function (){//点击按钮游戏开始
 
 			this.style.display = 'none';
+
+			oWrapGame.style.backgroundImage = 'url(images/bg.png)';
 
 			Game.init('wrapGame');//执行初始化
 		}
@@ -39,11 +46,11 @@ window.onload = function (){
 
 			Enemy : {//小蜜蜂数据
 
-				e1 :{ style : 'enemy1' , blood : 1 , speed : 4 , score : 1},
+				e1 :{ style : 'enemy1' , blood : 1 , speed : 3 , score : 1},
 
-				e2 :{ style : 'enemy2' , blood : 2 , speed : 5 , score : 2},
+				e2 :{ style : 'enemy2' , blood : 2 , speed : 4 , score : 2},
 
-				e3 :{ style : 'enemy3' , blood : 3 , speed : 6 , score : 3}
+				e3 :{ style : 'enemy3' , blood : 3 , speed : 4 , score : 3}
 			},
 
 			GameLevel : [//关卡设置
@@ -52,22 +59,22 @@ window.onload = function (){
 
 					eMap : [
 
-						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
 
-						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
 
-						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
 
-						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
 
-						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
 
-						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
 					],
 
-					colNum : 12,
+					colNum : 15,
 
-					iSpeedX : 5,
+					iSpeedX : 6,
 
 					iSpeedY : 5,
 
@@ -78,27 +85,54 @@ window.onload = function (){
 
 					eMap : [
 
-						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
+						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
 
-						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
+						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
 
-						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
+						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
 
-						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
 
-						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
 
-						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
 					],
 
-					colNum : 14,
+					colNum : 15,
 
-					iSpeedX : 10,
+					iSpeedX : 7,
 
-					iSpeedY : 10,
+					iSpeedY : 4,
 
-					time : 2000
+					time : 3000
+				},
+
+				{
+
+					eMap : [
+
+						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
+
+						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
+
+						'e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3','e3',
+
+						'e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2','e2',
+
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+
+						'e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1','e1',
+					],
+
+					colNum : 15,
+
+					iSpeedX : 7,
+
+					iSpeedY : 4,
+
+					time : 3000
 				}
+
 
 			],
 
@@ -149,7 +183,7 @@ window.onload = function (){
 
 				Ul.id = 'bee';
 
-				Ul.style.width = oGk.colNum*33 + 'px';
+				Ul.style.width = oGk.colNum*32 + 'px';
 
 				this.oParent.appendChild(Ul);
 
@@ -197,7 +231,7 @@ window.onload = function (){
 
 				var R = this.oParent.offsetWidth - this.Ul.offsetWidth;
 
-				setInterval(function(){
+				this.Ul.timer = setInterval(function(){
 
 					if(This.Ul.offsetLeft > R){
 
@@ -230,7 +264,7 @@ window.onload = function (){
 
 				var This = this;
 
-				this.Ul.timer = setInterval(function(){
+				setInterval(function(){
 
 					var a = (This.oAir.offsetLeft + This.oAir.offsetWidth/2) - (nowLi.offsetLeft + nowLi.parentNode.offsetLeft + nowLi.offsetWidth/2);
 
