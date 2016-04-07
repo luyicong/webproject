@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>看你有多色</title>
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+	<!-- 欢迎页面 -->
+	<div id="welcome">
+		<h1>看你有多色</h1>
+		<p>找出颜色不同的一个</p>
+		<div id="btnWrap">
+			<button id="startBtn">开始游戏</button>
+		</div>
+		<p id="hdw"><a href="http://www.houdunwang.com">后盾网人人做后盾</a></p>
+	</div> 
+	<!-- 游戏页面 -->
+	<div id="content">
+		<div id="scoreWrap">分数：<span id="score">0</span></div>
+		<p id="time">0</p>
+		<p id="hd"><a href="http://www.baidu.com">后盾网人人做后盾</a></p>
+		<canvas id="box"></canvas>
+	</div>
+	<!-- 结束页面 -->
+	<div id="over">
+		<h1 id="userLevel">L1你是瞎子</h1>
+		<div id="buttonWrap">
+			<button id="endBtn">重新游戏</button> 
+		</div>
+		<p id="houdun"><a href="http://www.houdunwang.com">后盾网人人做后盾</a></p>
+	</div>	
+	<script type="text/javascript">
+	window.onload = function (){
+
+		var oStartBtn = document.getElementById('startBtn');
+
+		var oEndBtn = document.getElementById('endBtn');
+
+		var viewW = window.innerWidth;
+
+		var viewH = window.innerHeight;
+
+		document.getElementById('welcome').style.height = viewH+ 'px';
+
+		document.getElementById('over').style.height = viewH + 'px';
+
+
+		oStartBtn.onclick = oEndBtn.onclick = function (){
+
+			colorGame.gameInit();
+		}
+
+		var colorGame = {
+			
+			gameInit : function (){//游戏初始化
+
+				//获取画布并创建2d绘画环境
+				var oCanvas = document.getElementById('box');
+
+				var oCtx = oCanvas.getContext('2d');
+
+				var borderW = oCanvas.clientLeft;
+
+				var time = 10;
+				//初始分数
+				var score = 0;
+				//初始等级
+				var level = 1;
+				//设置最高等级
+				var maxLevel = 8;
+				//初始间隔
+				var space = 10; 
+
+				this.oCanvas = oCanvas;
+
+				this.oCtx = oCtx;
+
+				this.time = 10;
+
+				this.score = 0;
+
+				this.level = 1;
+
+				this.maxLevel = 8; 
+
+				//设置画布的宽高
+				oCanvas.width = viewW - 2 * borderW;
+
+				oCanvas.height = viewW - 2 * borderW;
+
+				this.gameSart();
+
+				this.createRect();
+			},
+
+			gameSart : function (){//游戏开始
+
+				document.getElementById('welcome').style.display = 'none';
+
+				document.getElementById('over').style.display = 'none';
+
+				//抓取用户等级元素
+				var userLevel = document.getElementById('userLevel');
+				//设置时间
+				var timeEle = document.getElementById('time');
+
+				timeEle.innerHTML = this.time;
+
+				var This = this;
+
+				var time = this.time;
+
+				var timer = setInterval(function(){
+
+					if(time == 0){
+
+						switch(true){
+
+							case This.score<5:
+
+								userLevel.innerHTML = 'L1你是瞎子';
+
+								break;
+
+							case This.score<10:
+
+								userLevel.innerHTML = 'L2猫的眼睛';
+
+								break;	
+
+							case This.score<15:
+
+								userLevel.innerHTML = 'L3上帝眼睛';
+
+								break;
+
+							default:
+
+								userLevel.innerHTML = '你已经超神了';
+
+								break;								
+						}
+
+						//将结束页面现显示
+						document.getElementById('over').style.display = "block";
+
+						clearInterval(timer);
+
+						return;
+
+					}
+
+					time--;
+
+					timeEle.innerHTML = time;
+
+				},1000);
+
+			},
+
+			createRect : function (){//创建色块
+
+				this.oCtx.clearRect(0,0,viewW,viewW);
+				//获得除了边框之外的宽度
+				var wid = this.oCanvas.clientWidth;
+
+				if(this.level<this.maxLevel){
+
+					this.space--;
+				}
+
+				//计算所有色块的宽度
+				var leftW = wid - this.space * this.level;
+				//计算每一个小色块的宽度
+				this.everyW = leftW/(this.level+1);
+
+				//存色块的坐标数字
+				var RectArr = [];
+
+				//随机颜色
+				var r = Math.floor(Math.random()*256);
+
+				var g = Math.floor(Math.random()*256);
+
+				var b = Math.floor(Math.random()*256);
+
+				this.oCtx.fillStyle = 'rgb('+r+','+g+','+b+')';
+
+				for (var i = 0; i < (this.level+1)*(this.level+1); i++) {
+					//绘制矩形(横坐标、纵坐标、宽、高)
+					//横坐标      space+(i%列)*(space+宽)
+					//纵坐标      space+Math.floor(i/列)*(space+宽)
+					this.oCtx.fillRect((i%(this.level+1))*(this.space+this.everyW),Math.floor(i/(this.level+1))*(this.space+this.everyW),this.everyW,this.everyW);
+
+					RectArr[RectArr.length] = {
+
+						x:(i%(this.level+1))*(this.space+this.everyW),
+
+						y:Math.floor(i/(this.level+1))*(this.space+this.everyW)
+					}
+
+					console.log(123);
+
+				}
+				//正确小色块的序号
+				var rightIndex = Math.floor(Math.random()*RectArr.length);
+				//改变颜色
+				r += 20;
+				g += 20;
+				b += 20;
+				//重新设置填充颜色
+				this.oCtx.fillStyle = 'rgb('+r+','+g+','+b+')';
+
+				this.oCtx.fillRect(RectArr[rightIndex].x,RectArr[rightIndex].y,this.everyW,this.everyW);
+
+				console.log(123);
+
+				this.clickChecked();
+			},
+
+			clickChecked : function (){
+
+
+			}
+		}
+
+	}
+	</script>
+</body>
