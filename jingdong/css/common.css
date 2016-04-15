@@ -1,0 +1,35 @@
+/* CSS Document */
+@charset "utf-8";
+
+/* 
+* @Author: Luyicong
+* @Date:   2016-03-10 15:43:03
+* @Last Modified by:   Luyicong
+* @Last Modified time: 2016-04-17 17:28:12
+*/
+
+/* 系统初始化
+------------------------------------------------------------------- */
+*{ margin:0; padding:0; border:none; list-style:none; }
+body{ background:#FFF; color:#333; font-size:12px; font-family:'Simsun', "Microsoft Yahei", "Lucida Grande", Verdana, Lucida, Helvetica, Arial, sans-serif;}
+a{ color:#666; text-decoration:none; cursor:pointer; }
+a:hover {color: #C81623; }
+img{display:block;border:none;}
+small{ font-size:12px;}
+input{border:none;outline:none}
+
+/* 各类小组件
+------------------------------------------------------------------- */
+.clear{clear:both;}
+.red{ color:red;}
+.fl{ float:left;}
+.fr{ float:right;}
+
+/* 宽度\高度\尺寸
+------------------------------------------------------------------- */
+.w100pre{ width:100%;}
+.w1210{ width:1210px; margin:0 auto;}
+.w980{ width:980px; margin:0 auto;} 
+.w960{ width:960px; margin:0 auto;}
+.w225{ width:225px;}
+.h30{ height:30px;}

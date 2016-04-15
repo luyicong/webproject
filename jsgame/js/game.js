@@ -5,8 +5,6 @@ window.onload = function (){
 		var oBtn =document.getElementById('gameBtn');
 
 		var oGkTxt = document.getElementById('Gk');
-
-		Game.init();
 		
 		document.onkeydown = function (ev){//回车键或J键，游戏开始
 
@@ -19,7 +17,6 @@ window.onload = function (){
 				oWrapGame.style.backgroundImage = 'url(../images/bg.png)';
 
 				Game.init('wrapGame');//执行初始化
-;
 			}
 		}
 
