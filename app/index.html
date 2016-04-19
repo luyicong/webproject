@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title>精仿广西人才网</title>
+		<title>仿广西人才网</title>
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
@@ -161,16 +161,17 @@
 				<header id="header" class="mui-bar mui-bar-nav">
 					<h1 class="mui-title">推荐职位</h1>
 				</header>
-				<div class="jobContent">
+				<div class="jobContent J_jobContent">
 					<p class="noneList">你当前还没有推荐职位，可能是没有填写默认简历中的求职意向</p>
 				</div>
 			</div>
 			<div id="tabbar-with-contact" class="mui-control-content">
 				<header id="header" class="mui-bar mui-bar-nav">
 					<h1 class="mui-title">我的简历</h1>
-					<a class="createBtn" href="#">创建</a>
+					<!--<a class="createBtn" href="#">创建</a>-->
+					<button class="createBtn mui-btn mui-btn-link mui-pull-right">创建</button>
 				</header>
-				<div class="resumeList">
+				<div class="resumeList J_resument">
 					<p class="noneResumeList">共可以创建2份简历，您还没创建有简历</p>
 				</div>
 			</div>
@@ -237,38 +238,7 @@
 		<script>
 			(function($, doc) {
 				$.init();
-				var settings = app.getSettings();
-				var account = doc.getElementById('account');
-				//
-				window.addEventListener('show', function() {
-					var state = app.getState();
-					account.innerText = state.account;
-				}, false);
-				$.plusReady(function() {
-					var settingPage = $.preload({
-						"id": 'setting',
-						"url": 'setting.html'
-					});
-					//设置
-					var settingButton = doc.getElementById('setting');
-					//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
-					settingButton.addEventListener('tap', function(event) {
-						$.openWindow({
-							id: 'setting',
-							show: {
-								aniShow: 'pop-in'
-							},
-							styles: {
-								popGesture: 'hide'
-							},
-							waiting: {
-								autoShow: false
-							}
-						});
-					});
-					//--
-					$.oldBack = mui.back;
-					var backButtonPress = 0;
+				var backButtonPress = 0;
 					$.back = function(event) {
 						backButtonPress++;
 						if (backButtonPress > 1) {
@@ -281,8 +251,7 @@
 						}, 1000);
 						return false;
 					};
-				});
-			}(mui, document));
+			})(mui, document);
 		</script>
 	</body>
 

@@ -25,7 +25,7 @@ $(function(){
 	}
 	
 	
-	$('.jobContent').add('.resumeList').css('height',$(window).height());
+	$('.J_jobContent').add('.J_resumentPage').css('height',($(window).height()-45));
 	
 	
 });

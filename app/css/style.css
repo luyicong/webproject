@@ -99,6 +99,7 @@ body {
 	margin:1px;
 	float: left;
 	color: #999;
+	font-size: 13px;
 }
 #hotList{
 	width: 96%;
@@ -107,15 +108,15 @@ body {
 }
 #hotList .hotItem{
 	width:100%;
-	height:60px;
+	height:65px;
 	margin-bottom: 10px;
 	position: relative;
 	overflow: hidden;
 	background: #FFFFFF;
 }
 #hotList .hotItem .img{
-	width:60px;
-	height: 60px;
+	width:65px;
+	height: 65px;
 	float: left;
 }
 #hotList .hotItem .img img{
@@ -127,23 +128,23 @@ body {
 	float: left;
 	height:240px;
 	position: absolute;
-	left: 65px;
+	left: 68px;
 	top:0;
 }
 #hotList .hotItem .rollTxt li{
-	height: 60px;
+	height: 65px;
 	padding:0;
 	margin:0;
 	float: left;
 }
 #hotList .hotItem .rollTxt li h4{
 	color: #01a0e9;
-	font-size: 13px;
+	font-size: 14px;
 }
 #hotList .hotItem .rollTxt li p{
 	padding:0;
 	margin:0;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;	
 }
 #hotList .hotItem .rollTxt li p span{
@@ -151,7 +152,7 @@ body {
 	line-height: 18px;
 }
 #hotList .jobMenu{
-	height: 100px;
+	height: 90px;
 }
 #hotList .jobMenu .menuItem{
 	width: 25%;
@@ -162,31 +163,31 @@ body {
 #hotList .jobMenu .menuItem a{
 	display: block;
 	width: 100%;
-	padding-top:65px;
-	line-height: 30px;
+	padding-top:50px;
+	line-height: 45px;
 	text-align: center;
 	color: #666666;
 	font-weight: 600;
-	font-size: 14px;
+	font-size: 13px;
 }
 #hotList .jobMenu .menuItem:nth-of-type(1) a{
 	
-	background: url(../images/icon1.png)no-repeat center 15px;
+	background: url(../images/icon1.png)no-repeat center 10px;
 	background-size: 45px 45px;
 }
 #hotList .jobMenu .menuItem:nth-of-type(2) a{
 	
-	background: url(../images/icon2.png)no-repeat center 15px;
+	background: url(../images/icon2.png)no-repeat center 10px;
 	background-size: 45px 45px;
 }
 #hotList .jobMenu .menuItem:nth-of-type(3) a{
 	
-	background: url(../images/icon3.png)no-repeat center 15px;
+	background: url(../images/icon3.png)no-repeat center 10px;
 	background-size: 45px 45px;
 }
 #hotList .jobMenu .menuItem:nth-of-type(4) a{
 	
-	background: url(../images/icon4.png)no-repeat center 15px;
+	background: url(../images/icon4.png)no-repeat center 10px;
 	background-size: 45px 45px;
 }
 #header{
@@ -197,32 +198,27 @@ body {
 	font-size: 16px;
 }
 #header .createBtn{
-	height: 44px;
-	line-height: 44px;
-	width: 54px;
-	text-align: center;
 	color: #fff;
-	position: absolute;
-	top:0;
-	right: 10px;
+
 }
 .jobContent,.resumeList{
-	
-	padding:45px 0;
+	width: 100%;
 	position: relative;
+	box-sizing: border-box;
 }
 .jobContent .noneList{
 	display: block;
-	width: 96%;
+	width: 90%;
 	line-height: 30px;
 	color: #999;
 	margin:auto;
 	position: absolute;
 	top:50%;
 	left: 50%;
-	margin-left:-48%;
+	margin-left:-45%;
 	margin-top:-30px;
 	text-align: center;
+	font-size: 16px;
 }
 
 .userHeader{
@@ -263,21 +259,21 @@ body {
 }
 .userPage .mui-table-view-cell a{
 	
-	font-size: 14px;
+	font-size: 15px;
 	font-weight: 400;
 	text-indent: 30px;
 	color: #555;
+	line-height: 26px;
 }
 .userPage .mui-table-view-cell .Icon{
 	color: #3196E0;
 	position: absolute;
 	left:-15px;
 	top：0;
-	font-size: 22px;
 }
 .noneResumeList{
 	line-height: 30px;
-	padding:0 10px
+	padding:0 10px;
+	margin-top: 50px;
 }
-
 
